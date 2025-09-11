@@ -134,7 +134,7 @@ app.post("/schedule", authenticateToken, async (req, res) => {
       scheduleId = scheduleResult.rows[0].id;
     }
 
-    // Clear old days/tasks
+    // Clear tasks
     await pool.query(
       `DELETE FROM trainsched.tasks WHERE day_id IN 
        (SELECT id FROM trainsched.schedule_days WHERE schedule_id=$1)`,
@@ -145,7 +145,7 @@ app.post("/schedule", authenticateToken, async (req, res) => {
       [scheduleId]
     );
 
-    // Insert new days and tasks
+    // Save new tasks to DB
     for (const [dayName, dayData] of Object.entries(scheduleData)) {
       const dayInsert = await pool.query(
         "INSERT INTO trainsched.schedule_days (schedule_id, day_of_week, start_time, end_time) VALUES ($1,$2,$3,$4) RETURNING id",
