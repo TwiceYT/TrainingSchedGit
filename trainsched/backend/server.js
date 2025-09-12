@@ -21,7 +21,6 @@ const pool = new pg.Pool({
 async function initDB() {
   const sql = fs.readFileSync("./schema.sql", "utf8");
   await pool.query(sql);
-  console.log("✅ Database initialized");
 }
 initDB();
 
@@ -66,10 +65,6 @@ app.post("/login", async (req, res) => {
 
   const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: "1h" });
   res.json({ token });
-
-  console.log("Password from DB:", user.password);
-  console.log("Password from request:", password);
-  console.log("Match?", match);
 
 });
 
@@ -169,4 +164,4 @@ app.post("/schedule", authenticateToken, async (req, res) => {
   }
 });
 
-app.listen(port, () => console.log(`Server running on port ${port}`));
+app.listen(port, () => console.log(`Server running`));
