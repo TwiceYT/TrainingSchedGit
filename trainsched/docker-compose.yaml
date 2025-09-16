@@ -14,7 +14,7 @@ services:
       - PORT
 
   frontend:
-    build: .
+    build: ./frontend
     container_name: react_frontend
     restart: always
     ports:
