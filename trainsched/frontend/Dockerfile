@@ -13,7 +13,7 @@ RUN npm install
 COPY . .
 
 # Build the frontend (for Vite/React)
-RUN npm run build
+RUN npm run dev 
 
 # --- Production stage ---
 FROM nginx:stable-alpine

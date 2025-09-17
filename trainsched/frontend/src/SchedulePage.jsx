@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import axios from "axios";
 import "./assets/css/App.scss";
+import Header from "./header";
+
 
 export default function SchedulePage({ token }) {
   const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
@@ -68,6 +70,8 @@ export default function SchedulePage({ token }) {
   };
 
   return (
+    <>
+    <Header />
     <div className="schedule">
       <h1 className="schedule__title">📅 My Training Schedule</h1>
 
@@ -131,5 +135,6 @@ export default function SchedulePage({ token }) {
         💾 Save Schedule
       </button>
     </div>
+  </>
   );
 }

@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import LoginPage from "./LoginPage";
 import SchedulePage from "./SchedulePage";
 import SignupPage from "./SignUpPage";
+import Results from "./Result";
 
 function isTokenExpired(token) {
   try {
@@ -39,6 +40,14 @@ export default function App() {
           }
         />
         <Route path="/signup" element={<SignupPage />} />
+        <Route path="/results"  element={
+            token && !isTokenExpired(token) ? (
+              <Results token={token} />
+            ) : (
+              <Navigate to="/login" />
+            )
+          } />
+
       </Routes>
     </Router>
   );

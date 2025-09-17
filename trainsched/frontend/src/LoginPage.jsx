@@ -2,6 +2,8 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom"; // <-- import
 import "./assets/css/LoginPage.scss";
+import Header from "./header";
+
 
 export default function LoginPage({ setToken }) {
   const [username, setUsername] = useState("");
@@ -22,6 +24,8 @@ export default function LoginPage({ setToken }) {
   };
 
   return (
+    <>
+    <Header />
     <div className="loginPage">
       <h1 className="loginPage__title">Login</h1>
         <main className="loginPage__main">
@@ -33,5 +37,6 @@ export default function LoginPage({ setToken }) {
         </main>
       
     </div>
+  </>
   );
 }

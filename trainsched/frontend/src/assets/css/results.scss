@@ -1,0 +1,129 @@
+
+@use "sass:color";
+
+.apps-res {
+  padding: 20px;
+  
+
+  &__text {
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    font-size: 2rem;
+    margin-bottom: 5px;
+  }
+
+  &__subtitle {
+    color: #555;
+  }
+
+  &__tabs {
+    &-list {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      padding: 0;
+      border-bottom: 2px solid #ccc;
+      margin-bottom: 20px;
+      color: white;
+    }
+  }
+  &__tab {
+      padding: 10px;
+      cursor: pointer;
+      background-color: rgb(41, 182, 229);
+
+    &--active {
+        border-bottom: 2px solid #2563EB;
+        font-weight: bold;
+      }
+    }
+
+    &__tab-content {
+      padding-top: 20px;    
+    }
+
+
+}
+
+.dashboard {
+  &__title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  &__empty {
+    color: #888;
+
+  }
+
+  &__card {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+  }
+
+  &__competition {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  &__events {
+    list-style: none;
+    padding-left: 15px;
+  }
+
+  &__event {
+    margin-bottom: 3px;
+  }
+}
+
+.log-result {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+  }
+
+  &__input {
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  &__events-title {
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+
+  &__event {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  &__add-btn {
+    padding: 8px 12px;
+    background: #10b981;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  &__submit-btn {
+    padding: 10px;
+    background: #2563EB;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import Header from "./header";
+
 
 export default function SignupPage() {
   const navigate = useNavigate();
@@ -27,6 +29,8 @@ export default function SignupPage() {
   };
 
   return (
+    <>
+    <Header />
     <div className="signup-page">
       <h1 className="signup-page__title">Sign Up</h1>
 
@@ -62,5 +66,6 @@ export default function SignupPage() {
         </button>
       </div>
     </div>
+    </>
   );
 }
